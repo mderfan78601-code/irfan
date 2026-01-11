@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD IRFAN | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+body{
+    background:#f4f6f8;
+    color:#222;
+    line-height:1.7;
+}
+
+/* ===== Header ===== */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+.logo{
+    font-size:24px;
+    font-weight:700;
+}
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+/* ===== Hero ===== */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:90px 80px;
+    background:linear-gradient(135deg,#6f6a60,#9c9487);
+    color:#fff;
+}
+.hero-content{ width:55%; }
+.hero h1{ font-size:48px; margin-bottom:20px; }
+.hero p{ font-size:18px; margin-bottom:30px; }
+.btn{
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+.hero img{
+    width:360px;
+    height:450px;
+    border-radius:18px;
+    object-fit:cover;
+    background:#ddd;
+    image-rendering: high-quality;  
+}
+section{
+    padding:90px 80px;
+    background:#fff;
+}
+.section-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:40px;
+}
+
+/* ===== Slider ===== */
+.slider{
+    max-width:650px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:18px;
+    position:relative;
+    height:450px;
+}
+.slides{
+    display:flex;
+    transition:0.6s ease;
+}
+.slides img{
+    width:100%;
+    height:100%;
+    flex-shrink:0;
+    object-fit:cover;
+    background:#e0e0e0;
+    image-rendering: -webkit-optimize-contrast;  
+    image-rendering: crisp-edges;  
+    backface-visibility: hidden;
+}
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.6);
+    color:#fff;
+    border:none;
+    padding:10px 15px;
+    font-size:20px;
+    cursor:pointer;
+}
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* ===== VBYLD Section ===== */
+.vbyld{
+    background:linear-gradient(135deg,#eef2f3,#d9e4ec);
+}
+.vbyld-card{
+    display:flex;
+    gap:50px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+.vbyld-text{
+    width:65%;
+    font-size:16.5px;
+}
+.vbyld img{
+    width:320px;
+    border-radius:16px;
+    object-fit:cover;
+}
+
+/* ===== About ===== */
+.about-content{
+    display:flex;
+    align-items:flex-start;
+    gap:60px;
+    justify-content:center;  
+}
+.about-text{ 
+    width:45%;
+    font-size:16px;
+    line-height:1.8;
+}
+.about img{
+    width:450px;
+    height:550px;
+    border-radius:18px;
+    object-fit:cover;
+    flex-shrink:0;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    image-rendering: -webkit-optimize-contrast;  
+}
+/* ===== Contact ===== */
+.contact{
+    background:#111;
+    color:#fff;
+    text-align:center;
+}
+.contact h2{
+    font-size:34px;
+    margin-bottom:20px;
+}
+.contact p{
+    font-size:18px;
+    margin:10px 0;
+}
+.contact span{ color:#00d9ff; }
+
+/* ===== Footer ===== */
+footer{
+    background:#000;
+    color:#aaa;
+    text-align:center;
+    padding:15px;
+}
+
+/* ===== Modal ===== */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:200;
+}
+.modal-content{
+    background:#fff;
+    padding:30px;
+    max-width:750px;
+    max-height:85vh;
+    overflow-y:auto;
+    border-radius:20px;
+}
+.close{
+    float:right;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+    header, .hero, section{
+        padding:40px 25px;
+        flex-direction:column;
+        text-align:center;
+    }
+    .hero-content, .about-text, .vbyld-text{
+        width:100%;
+    }
+    .about-content, .vbyld-card{
+        flex-direction:column;
+    }
+    img{ margin-top:25px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MD IRFAN</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#pictures">My Pictures</a>
+        <a href="#vbyld">VBYLD 2025</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>THIS IS MD IRFAN</h1>
+        <p>Believer in the power of youth, technology, and determination. Turning aspirations into achievements through continuous learning, skill development, and meaningful action. On a mission to contribute to India's digital transformation and inspire others along the way.</p>
+        <button class="btn" onclick="openModal()">Read My Full Story</button>
+    </div>
+    <img src="https://i.ibb.co/gZzsNxH0/hero-image.jpg">
+</div>
+
+<!-- ===== My Pictures ===== -->
+<section id="pictures">
+    <h2 class="section-title">My Pictures</h2>
+    <div class="slider">
+        <div class="slides" id="slides">
+            <img src="https://i.ibb.co/8gm2CC6b/pic1.jpg">
+            <img src="https://i.ibb.co/Fb9C9tjN/pic2.jpg">
+            <img src="https://i.ibb.co/MyMX9z6W/pic3.jpg">
+            <img src="https://i.ibb.co/0RRQqWW8/pic4.jpg">
+            <img src="https://i.ibb.co/R4gF60Dq/image.jpg">
+        </div>
+        <button class="slider-btn prev" onclick="prevSlide()">❮</button>
+        <button class="slider-btn next" onclick="nextSlide()">❯</button>
+    </div>
+</section>
+
+<!-- ===== VBYLD ===== -->
+<section class="vbyld" id="vbyld">
+    <h2 class="section-title">All About VBYLD 2025</h2>
+    <div class="vbyld-card">
+        <div class="vbyld-text">
+            The Viksit Bharat Young Leaders Dialogue (VBYLD) 2025 was a major national
+            initiative by the Indian government to intensively engage the nation's
+            youth in public affairs and national development, serving as a
+            restructured and expanded version of the annual National Youth Festival.
+            Held from January 10th to 12th, 2025, at Bharat Mandapam in New Delhi,
+            the event brought together around 3,000 young individuals (aged 15–29)
+            from diverse backgrounds, selected through a merit-based, multi-stage
+            process. The primary objective was to inspire young leaders, innovators,
+            and thinkers to contribute their ideas and vision for achieving the goal
+            of a developed India (Viksit Bharat) by 2047.
+
+            <br><br>
+
+            The dialogue was structured around various tracks including the
+            "Viksit Bharat Challenge", Cultural Track, Design for Bharat and Hack for
+            a Social Cause. Participants interacted with the Prime Minister, senior
+            government officials and national icons such as Anand Mahindra,
+            Dr. S. Somanath and Amitabh Kant. Millions of youth participated through
+            MyGov and MY Bharat platforms, making it a landmark youth-led initiative.
+        </div>
+
+        <img src="https://i.ibb.co/5gwL7Lcw/vbyld.jpg">
+    </div>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about">
+    <div class="about-content">
+        <div class="about-text">
+            <h2 class="section-title">About Me</h2>
+            Hello everyone! My name is MD Irfan, and I am thrilled to share my journey with you. I hail from the beautiful city of West Singhbhum in Jharkhand, a place known for its rich cultural heritage and vibrant community. Growing up in this wonderful environment has shaped my values, ambitions, and the person I am today.
+Educational Journey
+My academic journey began at Carmel High School, Chakradharpur (CKP), where I completed my 10th standard with a commendable score of 89%. Those years were foundational in building my curiosity and passion for learning. The dedication of my teachers and the support of my peers pushed me to strive for excellence in everything I pursued. The discipline and study habits I developed during this time continue to benefit me immensely.
+Following this, I pursued my higher secondary education in the science stream at Jawaharlal Nehru College, CKP. Choosing science was a natural decision for me as I have always been fascinated by how things work, the logic behind technology, and the endless possibilities that science offers. My 12th standard education opened new horizons for me, introducing me to subjects that challenged my thinking and expanded my understanding of the world around us.
+Family Background
+I come from a loving and supportive family that has always encouraged me to dream big and work hard. My father is a dedicated businessman who has taught me invaluable lessons about perseverance, integrity, and the importance of building meaningful relationships. Watching him navigate the challenges of entrepreneurship has inspired me to develop my own problem-solving skills and resilience.
+My mother is a homemaker who is the heart and soul of our family. Her unwavering support, wisdom, and care have been my constant source of strength. She has taught me the importance of staying grounded, being compassionate, and maintaining a balanced life no matter how ambitious my goals may be.
+I am blessed to have three wonderful sisters who make my life complete. Growing up with them has taught me patience, empathy, and the value of strong family bonds. They have been my cheerleaders, critics, and friends, pushing me to become the best version of myself.
+My Greatest Achievement
+One of the proudest moments of my life has been participating in the Viksit Bharat Young Leaders Dialogue (VBYLD) at the state level. This incredible opportunity allowed me to represent Jharkhand and engage with some of the brightest young minds from across the country. Being selected for VBYLD was a validation of my dedication and passion for contributing to nation-building.
+The highlight of this experience was presenting my ideas at Ranchi University on December 16, 2025. Standing before an esteemed audience and sharing my vision for a developed India was both nerve-wracking and exhilarating. This experience not only boosted my confidence but also reinforced my belief that young people have the power to drive meaningful change in our society. The insights I gained from interacting with fellow participants, government officials, and national icons have been truly transformative.
+Current Focus and Skills
+Currently, I am channeling all my energy into skill development, particularly in the field of technology. I am actively learning programming languages such as Java, Python, and HTML, which are essential for building a strong foundation in software development. In today's digital age, I believe that technical skills are crucial for solving real-world problems and creating innovative solutions.
+Beyond just learning syntax and code, I am focused on understanding the practical applications of these technologies. Whether it's developing web applications, analyzing data, or creating algorithms, I am committed to mastering these skills through consistent practice and hands-on projects.
+Hobbies and Interests
+When I'm not coding or studying, I enjoy learning new skills across various domains. I am a firm believer in lifelong learning and constantly seek opportunities to expand my knowledge. Listening to music is one of my favorite ways to relax and recharge. Music has a special way of inspiring creativity and helping me maintain focus during challenging times.
+I also love watching movies, especially those that tell compelling stories or showcase innovative cinematography. Films not only entertain me but also offer different perspectives on life, culture, and human emotions.
+Looking Ahead
+As I continue my journey, I am excited about the endless possibilities that lie ahead. My goal is to leverage my technical skills, leadership experience, and passion for innovation to make a positive impact in the field of technology. I aspire to work on projects that can benefit society and contribute to India's vision of becoming a developed nation by 2047.
+Thank you for taking the time to learn about my journey. I look forward to connecting with like-minded individuals and continuing to grow both personally and professionally!
+        </div>
+        <img src="https://i.ibb.co/6JFrd92X/about.jpg">
+    </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <span>mderfan5655@gmail.com</span></p>
+    <p>Phone / WhatsApp: <span>9241755768</span></p>
+    <p>Instagram: <span>_irfan.0202</span></p>
+</section>
+
+<footer>© 2026 MD IRFAN | All Rights Reserved</footer>
+
+<!-- ===== Modal ===== -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>My Full Story</h2>
+        Hello everyone! My name is MD Irfan, and I am thrilled to share my journey with you. I hail from the beautiful city of West Singhbhum in Jharkhand, a place known for its rich cultural heritage and vibrant community. Growing up in this wonderful environment has shaped my values, ambitions, and the person I am today.
+Educational Journey
+My academic journey began at Carmel High School, Chakradharpur (CKP), where I completed my 10th standard with a commendable score of 89%. Those years were foundational in building my curiosity and passion for learning. The dedication of my teachers and the support of my peers pushed me to strive for excellence in everything I pursued. The discipline and study habits I developed during this time continue to benefit me immensely.
+Following this, I pursued my higher secondary education in the science stream at Jawaharlal Nehru College, CKP. Choosing science was a natural decision for me as I have always been fascinated by how things work, the logic behind technology, and the endless possibilities that science offers. My 12th standard education opened new horizons for me, introducing me to subjects that challenged my thinking and expanded my understanding of the world around us.
+Family Background
+I come from a loving and supportive family that has always encouraged me to dream big and work hard. My father is a dedicated businessman who has taught me invaluable lessons about perseverance, integrity, and the importance of building meaningful relationships. Watching him navigate the challenges of entrepreneurship has inspired me to develop my own problem-solving skills and resilience.
+My mother is a homemaker who is the heart and soul of our family. Her unwavering support, wisdom, and care have been my constant source of strength. She has taught me the importance of staying grounded, being compassionate, and maintaining a balanced life no matter how ambitious my goals may be.
+I am blessed to have three wonderful sisters who make my life complete. Growing up with them has taught me patience, empathy, and the value of strong family bonds. They have been my cheerleaders, critics, and friends, pushing me to become the best version of myself.
+My Greatest Achievement
+One of the proudest moments of my life has been participating in the Viksit Bharat Young Leaders Dialogue (VBYLD) at the state level. This incredible opportunity allowed me to represent Jharkhand and engage with some of the brightest young minds from across the country. Being selected for VBYLD was a validation of my dedication and passion for contributing to nation-building.
+The highlight of this experience was presenting my ideas at Ranchi University on December 16, 2025. Standing before an esteemed audience and sharing my vision for a developed India was both nerve-wracking and exhilarating. This experience not only boosted my confidence but also reinforced my belief that young people have the power to drive meaningful change in our society. The insights I gained from interacting with fellow participants, government officials, and national icons have been truly transformative.
+Current Focus and Skills
+Currently, I am channeling all my energy into skill development, particularly in the field of technology. I am actively learning programming languages such as Java, Python, and HTML, which are essential for building a strong foundation in software development. In today's digital age, I believe that technical skills are crucial for solving real-world problems and creating innovative solutions.
+Beyond just learning syntax and code, I am focused on understanding the practical applications of these technologies. Whether it's developing web applications, analyzing data, or creating algorithms, I am committed to mastering these skills through consistent practice and hands-on projects.
+Hobbies and Interests
+When I'm not coding or studying, I enjoy learning new skills across various domains. I am a firm believer in lifelong learning and constantly seek opportunities to expand my knowledge. Listening to music is one of my favorite ways to relax and recharge. Music has a special way of inspiring creativity and helping me maintain focus during challenging times.
+I also love watching movies, especially those that tell compelling stories or showcase innovative cinematography. Films not only entertain me but also offer different perspectives on life, culture, and human emotions.
+Looking Ahead
+As I continue my journey, I am excited about the endless possibilities that lie ahead. My goal is to leverage my technical skills, leadership experience, and passion for innovation to make a positive impact in the field of technology. I aspire to work on projects that can benefit society and contribute to India's vision of becoming a developed nation by 2047.
+Thank you for taking the time to learn about my journey. I look forward to connecting with like-minded individuals and continuing to grow both personally and professionally!
+    </div>
+</div>
+
+<script>
+let index=0;
+const slides=document.getElementById("slides");
+const total=slides.children.length;
+
+function showSlide(){
+    slides.style.transform=`translateX(-${index*100}%)`;
+}
+function nextSlide(){
+    index=(index+1)%total;
+    showSlide();
+}
+function prevSlide(){
+    index=(index-1+total)%total;
+    showSlide();
+}
+setInterval(nextSlide,3000);
+
+function openModal(){
+    document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
